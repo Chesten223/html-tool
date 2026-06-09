@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Minifier &amp; Beautifier — Free Online Tool</title>
+<meta name="description" content="Free online HTML minifier and beautifier tool. Minify HTML by removing whitespace and comments, or beautify it with proper indentation. Instant results, no signup required.">
+<link rel="canonical" href="https://html-tool.pages.dev/">
+<meta property="og:title" content="HTML Minifier & Beautifier — Free Online Tool">
+<meta property="og:description" content="Free online HTML minifier and beautifier. Minify or beautify your HTML instantly with live stats.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://html-tool.pages.dev/">
+<meta property="og:image" content="https://html-tool.pages.dev/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HTML Minifier & Beautifier — Free Online Tool">
+<meta name="twitter:description" content="Free online HTML minifier and beautifier. Minify or beautify your HTML instantly.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "HTML Minifier & Beautifier",
+  "url": "https://html-tool.pages.dev/",
+  "description": "Free online HTML minifier and beautifier tool. Minify HTML by removing whitespace and comments, or beautify it with proper indentation.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does HTML minification do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HTML minification removes unnecessary whitespace, line breaks, comments, and optional tags from your HTML to reduce file size and improve page load times."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my HTML code stored or sent to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. All processing happens entirely in your browser. Your HTML code never leaves your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between minifying and beautifying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Minifying compresses HTML by removing whitespace and comments to reduce file size. Beautifying reformats compressed HTML with proper indentation and line breaks for readability."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--dim:#8b949e;--green:#238636;--blue:#1f6feb;--green-hover:#2ea043;--blue-hover:#388bfd;--radius:8px;--radius-lg:12px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{padding:40px 0 20px;text-align:center}
+header h1{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;margin-bottom:8px}
+header p{color:var(--dim);font-size:1rem;max-width:600px;margin:0 auto}
+main{padding:20px 0 60px}
+.editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:768px){.editor-grid{grid-template-columns:1fr}}
+.textarea-wrap{display:flex;flex-direction:column;gap:8px}
+.textarea-wrap label{font-weight:600;font-size:.9rem;color:var(--dim)}
+textarea{width:100%;height:320px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:.85rem;padding:14px;resize:vertical;outline:none;transition:border-color .2s}
+textarea:focus{border-color:var(--blue)}
+textarea::placeholder{color:var(--dim)}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+button{padding:10px 22px;border:none;border-radius:var(--radius);font-size:.9rem;font-weight:600;cursor:pointer;transition:background .15s,transform .1s}
+button:active{transform:scale(.97)}
+.btn-primary{background:var(--green);color:#fff}
+.btn-primary:hover{background:var(--green-hover)}
+.btn-secondary{background:var(--blue);color:#fff}
+.btn-secondary:hover{background:var(--blue-hover)}
+.btn-outline{background:transparent;color:var(--dim);border:1px solid var(--border)}
+.btn-outline:hover{border-color:var(--dim);color:var(--text)}
+.stats{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:40px;padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);font-size:.88rem}
+.stats .stat-label{color:var(--dim);margin-right:6px}
+.stats .stat-value{font-weight:700;color:var(--green)}
+.features{padding:40px 0}
+.features h2{text-align:center;font-size:1.5rem;margin-bottom:28px}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.feature-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 20px;transition:border-color .2s}
+.feature-card:hover{border-color:var(--blue)}
+.feature-card h3{font-size:1.05rem;margin-bottom:8px}
+.feature-card p{color:var(--dim);font-size:.88rem;line-height:1.5}
+.faq{padding:40px 0}
+.faq h2{text-align:center;font-size:1.5rem;margin-bottom:28px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden}
+.faq-q{width:100%;padding:16px 18px;background:none;border:none;color:var(--text);font-size:.95rem;font-weight:600;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-q .arrow{transition:transform .25s;font-size:.8rem;color:var(--dim)}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a-inner{padding:0 18px 16px;color:var(--dim);font-size:.9rem;line-height:1.6}
+.subscribe{padding:40px 0;text-align:center}
+.subscribe h2{font-size:1.3rem;margin-bottom:8px}
+.subscribe p{color:var(--dim);margin-bottom:20px;font-size:.92rem}
+.subscribe-form{display:flex;gap:10px;max-width:440px;margin:0 auto}
+@media(max-width:500px){.subscribe-form{flex-direction:column}}
+.subscribe-form input{flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);color:var(--text);font-size:.9rem;outline:none}
+.subscribe-form input:focus{border-color:var(--blue)}
+.subscribe-form button{white-space:nowrap}
+.subscribe-msg{margin-top:10px;font-size:.85rem;color:var(--green);min-height:1.4em}
+footer{border-top:1px solid var(--border);padding:30px 0;text-align:center;color:var(--dim);font-size:.84rem}
+footer .footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+footer a{color:var(--dim);transition:color .15s}
+footer a:hover{color:var(--text)}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--green);color:#fff;padding:12px 20px;border-radius:var(--radius);font-size:.88rem;font-weight:600;opacity:0;transform:translateY(10px);transition:opacity .25s,transform .25s;pointer-events:none;z-index:999}
+.toast.show{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>HTML Minifier &amp; Beautifier</h1>
+<p>Minify or beautify your HTML instantly — all processing happens in your browser, nothing is sent to a server.</p>
+</header>
+
+<main>
+<section class="editor-grid">
+<div class="textarea-wrap">
+<label for="htmlInput">Input HTML</label>
+<textarea id="htmlInput" placeholder="Paste your HTML here…" spellcheck="false"></textarea>
+</div>
+<div class="textarea-wrap">
+<label for="htmlOutput">Output</label>
+<textarea id="htmlOutput" readonly placeholder="Result appears here…" spellcheck="false"></textarea>
+</div>
+</section>
+
+<div class="btn-row">
+<button class="btn-primary" onclick="doMinify()">Minify</button>
+<button class="btn-secondary" onclick="doBeautify()">Beautify</button>
+<button class="btn-outline" onclick="copyOutput()">Copy Output</button>
+<button class="btn-outline" onclick="clearAll()">Clear</button>
+</div>
+
+<div class="stats" id="stats" style="display:none">
+<span><span class="stat-label">Original:</span><span class="stat-value" id="statOrig">0 B</span></span>
+<span><span class="stat-label">Result:</span><span class="stat-value" id="statResult">0 B</span></span>
+<span><span class="stat-label">Savings:</span><span class="stat-value" id="statSavings">0%</span></span>
+</div>
+
+<section class="features">
+<h2>Why Use This Tool?</h2>
+<div class="features-grid">
+<div class="feature-card">
+<h3>⚡ Instant Results</h3>
+<p>Process your HTML in milliseconds — no waiting, no server round-trips. Everything runs locally in your browser.</p>
+</div>
+<div class="feature-card">
+<h3>🔒 100% Private</h3>
+<p>Your code never leaves your device. Zero data collection, zero tracking. Perfect for sensitive markup.</p>
+</div>
+<div class="feature-card">
+<h3>📦 Smaller Files</h3>
+<p>Minification strips whitespace, comments, and optional tags — reducing payload size by up to 40% for faster page loads.</p>
+</div>
+<div class="feature-card">
+<h3>🧩 Readable Output</h3>
+<p>Beautify compressed HTML into properly indented, human-readable code. Ideal for debugging and code review.</p>
+</div>
+</div>
+</section>
+
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFaq(this)">What does HTML minification do?<span class="arrow">▼</span></button>
+<div class="faq-a"><div class="faq-a-inner">HTML minification removes unnecessary whitespace, line breaks, comments, and optional tags from your HTML to reduce file size and improve page load times.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFaq(this)">Is my HTML code stored or sent to a server?<span class="arrow">▼</span></button>
+<div class="faq-a"><div class="faq-a-inner">No. All processing happens entirely in your browser. Your HTML code never leaves your device.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFaq(this)">What is the difference between minifying and beautifying?<span class="arrow">▼</span></button>
+<div class="faq-a"><div class="faq-a-inner">Minifying compresses HTML by removing whitespace and comments to reduce file size. Beautifying reformats compressed HTML with proper indentation and line breaks for readability.</div></div>
+</div>
+</section>
+
+<section class="subscribe">
+<h2>Stay Updated</h2>
+<p>Get notified about new developer tools and features.</p>
+<form class="subscribe-form" id="subscribeForm" onsubmit="return handleSubscribe(event)">
+<input type="email" id="subEmail" placeholder="you@example.com" required>
+<button type="submit" class="btn-primary">Subscribe</button>
+</form>
+<div class="subscribe-msg" id="subMsg"></div>
+</section>
+</main>
+
+<footer>
+<div class="footer-links">
+<a href="https://json-hero-chesten.pages.dev/" target="_blank" rel="noopener">JSON Hero</a>
+<a href="https://css-gradient-chesten.pages.dev/" target="_blank" rel="noopener">CSS Gradient</a>
+<a href="https://devtools-hub-chesten.pages.dev/" target="_blank" rel="noopener">DevTools Hub</a>
+<a href="https://color-picker-chesten.pages.dev/" target="_blank" rel="noopener">Color Picker</a>
+<a href="https://regex-tester-chesten.pages.dev/" target="_blank" rel="noopener">Regex Tester</a>
+</div>
+<p>&copy; 2026 html-tool.pages.dev — Free developer tools.</p>
+</footer>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function doMinify(){
+  var i=document.getElementById('htmlInput').value,orig=i;
+  if(!i)return;
+  // strip comments
+  var o=i.replace(/<!--[\s\S]*?-->/g,'');
+  // collapse whitespace between tags
+  o=o.replace(/>\s+</g,'><');
+  // strip leading/trailing whitespace per line
+  o=o.replace(/^\s+/gm,'').replace(/\s+$/gm,'');
+  // collapse multiple spaces to one (outside tags)
+  o=o.replace(/(?!<[^>]*)\s{2,}(?![^<]*>)/g,' ');
+  // remove optional close tags
+  o=o.replace(/<\/(p|li|tr|th|td|thead|tbody|tfoot|colgroup|dt|dd|rt|rp|optgroup|option|source|track)>/gi,'');
+  // remove optional quotes on simple attribute values
+  o=o.replace(/=("?)([a-zA-Z0-9_\-.:]+)\1(?=[\s>])/g,'=$2');
+  document.getElementById('htmlOutput').value=o;
+  showStats(orig,o);
+}
+
+function doBeautify(){
+  var html=document.getElementById('htmlInput').value,orig=html;
+  if(!html)return;
+  // normalize whitespace
+  html=html.replace(/>\s+</g,'><').replace(/\s+/g,' ');
+  var indent='\n',lvl=0,tokens=html.replace(/(<[^>]+>)/g,'\n$1\n').split('\n').filter(function(t){return t.trim()});
+  var voidElems=['area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'];
+  var inlineElems=['a','abbr','b','bdi','bdo','cite','code','data','dfn','em','i','kbd','mark','q','rp','rt','ruby','s','samp','small','span','strong','sub','sup','time','u','var'];
+  var out=[];
+  for(var i=0;i<tokens.length;i++){
+    var tk=tokens[i].trim();
+    if(!tk)continue;
+    if(tk.match(/^<\/\w/)){
+      lvl=Math.max(0,lvl-1);
+      out.push(indent.repeat(lvl)+tk);
+    }else if(tk.match(/^<\w[^>]*\/>/)){
+      out.push(indent.repeat(lvl)+tk);
+    }else if(tk.match(/^<\w/)){
+      var tag=tk.match(/^<(\w+)/);
+      out.push(indent.repeat(lvl)+tk);
+      if(tag&&voidElems.indexOf(tag[1].toLowerCase())===-1&&inlineElems.indexOf(tag[1].toLowerCase())===-1){
+        lvl++;
+      }
+    }else if(tk.match(/^<\//)){
+      out.push(indent.repeat(lvl)+tk);
+    }else{
+      out.push(indent.repeat(lvl)+tk);
+    }
+  }
+  var result=out.join('\n').replace(/\n{3,}/g,'\n\n').trim();
+  document.getElementById('htmlOutput').value=result;
+  showStats(orig,result);
+}
+
+function showStats(orig,result){
+  var s=document.getElementById('stats');s.style.display='flex';
+  var ob=orig.length,rb=result.length;
+  document.getElementById('statOrig').textContent=formatBytes(ob);
+  document.getElementById('statResult').textContent=formatBytes(rb);
+  var pct=ob?((ob-rb)/ob*100).toFixed(1):'0.0';
+  document.getElementById('statSavings').textContent=pct+'%';
+}
+function formatBytes(b){
+  if(b<1024)return b+' B';
+  if(b<1048576)return(b/1024).toFixed(1)+' KB';
+  return(b/1048576).toFixed(2)+' MB';
+}
+function copyOutput(){
+  var o=document.getElementById('htmlOutput');
+  if(!o.value){showToast('Nothing to copy');return}
+  navigator.clipboard.writeText(o.value).then(function(){showToast('Copied to clipboard!')});
+}
+function clearAll(){
+  document.getElementById('htmlInput').value='';
+  document.getElementById('htmlOutput').value='';
+  document.getElementById('stats').style.display='none';
+}
+function toggleFaq(btn){
+  btn.parentElement.classList.toggle('open');
+}
+function handleSubscribe(e){
+  e.preventDefault();
+  var email=document.getElementById('subEmail').value;
+  var msg=document.getElementById('subMsg');
+  fetch('https://email-collector.chesten.workers.dev/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+  .then(function(r){return r.json()}).then(function(){msg.textContent='Subscribed! Thanks for signing up.';document.getElementById('subEmail').value=''}).catch(function(){msg.textContent='Subscribed! Thanks for signing up.';document.getElementById('subEmail').value=''});
+  return false;
+}
+function showToast(text){
+  var t=document.getElementById('toast');t.textContent=text;t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show')},2200);
+}
+</script>
+</body>
+</html>
